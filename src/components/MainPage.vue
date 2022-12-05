@@ -10,6 +10,7 @@
         :lingua="serie.original_language"
         :Poster="serie.poster_path"
         :Voto="serie.vote_average"
+        :Overview="serie.overview"
       />
     </div>
 
@@ -47,5 +48,9 @@ export default {
     flex-wrap: wrap;
     gap: 50px;
     justify-content: center;
+}
+.contenitore{
+    background-color: grey;
+    min-height: 1920px;
 }
 </style>

@@ -45,5 +45,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+.header{
+  background-color: black;
+  padding: 20px;
+}
+h1{
+  margin-top: 0;
+  color: red;
+}
 </style>
