@@ -3,17 +3,26 @@
     <HeaderPage @passaDati="setDati"/>
     <div class="cards">
       <CardPage
+        v-for="film in arrayFilm"
+        :key="film.id"
+        :Titolo="film.title"
+        :TitoloOriginale="film.original_title"
+        :Lingua="film.original_language"
+        :Poster="film.poster_path"
+        :Voto="film.vote_average"
+        :Overview="film.overview"
+      />
+      <CardPage
         v-for="serie in arraySerie"
         :key="serie.id"
-        :Titolo="serie.title"
-        :TitoloOriginale="serie.original_title"
-        :lingua="serie.original_language"
+        :Titolo="serie.name"
+        :TitoloOriginale="serie.name"
+        :Lingua="serie.original_language"
         :Poster="serie.poster_path"
         :Voto="serie.vote_average"
         :Overview="serie.overview"
       />
     </div>
-
   </div>
 </template>
   
@@ -29,12 +38,16 @@ export default {
    },
    data() {
        return {
+          arrayFilm: [],
           arraySerie: [],
        }
    },
    methods:{
-    setDati(dati){
-        this.arraySerie = dati;
+    setDati({films, series}){
+      console.log(films)
+      console.log(series)
+      this.arrayFilm = films
+      this.arraySerie = series
     }
    }
 }
